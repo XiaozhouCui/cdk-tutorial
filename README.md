@@ -1,3 +1,11 @@
+## CLI Commands: 
+- `npm i -g aws-cdk`
+- `cdk init app --language typescript`
+- `cdk synth`, creat folder *cdk.out*
+- `cdk bootstrap`, create cloudformation stack `CDKToolkit` on AWS
+- delete folder *cdk.out*
+- `cdk deploy`, create cloudformation stack `CdkServerlessStack` (*CdkServerless* is project name) on AWS
+
 # Welcome to your CDK TypeScript project!
 
 This is a blank project for TypeScript development with CDK.
