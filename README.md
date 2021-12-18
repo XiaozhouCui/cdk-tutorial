@@ -19,6 +19,8 @@
 - Run `cdk doctor` to see environment variables
 - CloudFormation Output: add new `CfnOutput` instance in stack "SecondCdkStack" and run `cdk deploy`
 - This will add item in Outputs tab in AWS > CloudFormation > Stacks > CdkServerlessStack
+- CloudFormation Parameter: consider it as "Input", add new `CfnParameter` instance in stack, specify the duration and use it in Bucket
+- Parameters can also be used with CLI: run `cdk deploy --parameters duration=9`, the duration will become 9 on AWS console
 
 # Welcome to your CDK TypeScript project!
 
