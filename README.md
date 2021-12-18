@@ -8,8 +8,17 @@
 - Add a new s3 bucket in the constructor of `cdk-serverless-stack.ts`
 - Run `cdk deploy` again , this will create a new s3 bucket on AWS CloudFormation > Stacks > ...Stack > Resources
 - Add life cycle rules to the s3 bucket, set objects to expire after 5 days
-- Add a new stack in `cdk-serverless.ts` called *SecondStack*
+- Add a new stack in `cdk-serverless.ts` called *SecondCdkStack*
+- Once there are 2 stacks, run `cdk deploy` will fail, need to add flag `--all`
 - Run `cdk deploy --all`, this will deploy both stacks, each containing a s3 bucket with shared option (life cycle rule)
+- `cdk list`: list the stacks on AWS
+- Change the S3 expiration to 2 days and run `cdk synth`
+- Run `cdk diff`, this will show the difference between local and remote
+- Run `cdk destroy SecondCdkStack`, to delete the second stack from AWS 
+- The code `new CdkServerlessStack(app, 'SecondCdkStack', {});` is still in ts file, manually remove this line from ts file
+- Run `cdk doctor` to see environment variables
+- CloudFormation Output: add new `CfnOutput` instance in stack "SecondCdkStack" and run `cdk deploy`
+- This will add item in Outputs tab in AWS > CloudFormation > Stacks > CdkServerlessStack
 
 # Welcome to your CDK TypeScript project!
 
